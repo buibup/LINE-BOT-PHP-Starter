@@ -1,5 +1,5 @@
 <?php
-$access_token = 'JyHZe860ykSn2FufkTtH4DMEL3YhZd0egdsfVgNfF3moQSSFr4Kgo/K01vXzGzGdqXSYFFX/l1Y3yKJqIuZ1DLuRzmJrmyAH9toE32q3j5K1wVnlPQZhowfpJemzE5kSlRKHSiyE7quuYD76T5u5QgdB04t89/1O/w1cDnyilFU=';
+$access_token = 'R+4Y3QnCWFMF74gZNL54/V8eLmI7Dt7VS5d/kRZ3DzMjVG+04dDEdOvIFvcECubW34BglnKr2alnJ5ML2hG/jdf1KLsWxsTrbxaEfMRF/xgjab1pkNdltOm7JKcldfcNBADxHOYRc6VEJVfwpApwTQdB04t89/1O/w1cDnyilFU=';
 // Get POST body content
 $content = file_get_contents('php://input');
 // Parse JSON
@@ -15,18 +15,8 @@ if (!is_null($events['events'])) {
 			$Displayname = "";
 			$pictureUrl = "";
 			$statusMessage = "";
-			/*$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
-			$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => 'bd31aa28b9185fe8a1ddb826dd018921']);
-			$response = $bot->getProfile($event['source']['userId']);
-			if ($response->isSucceeded()) {
-			    $profile = $response->getJSONDecodedBody();
-			    $Displayname = $profile['displayName'];
-			    $pictureUrl = $profile['pictureUrl'];
-			    $statusMessage = $profile['statusMessage'];
-			}*/
-			
+		
 			$text = "UserId : " . $event['source']['userId'] . "\nType : ". $event['message']['type']. "\nText : ". $event['message']['text'];
-			//$text = "DisplayName : " . $Displayname . ", pictureUrl : " . $pictureUrl . ", statusMessage : " . $statusMessage
 			
 			// Get replyToken
 			$replyToken = $event['replyToken'];
